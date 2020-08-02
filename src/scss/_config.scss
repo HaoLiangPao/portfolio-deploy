@@ -1,0 +1,41 @@
+// Variables
+$website-width: 1280px;
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+$bg-image: url("../resources/img/showcase_dark.jpg");
+
+// Timeline-Variables
+$items: 12;
+$steps: #46b8e9;
+$colors: #46b8e9, #3ee9d1, #ce43eb, #4d92eb, #ffbc00, #425b84;
+$border: 1px solid rgba(191, 191, 191, 0.4);
+$timeline: #bdbdbd;
+$timeline-primary-color: #425b84;
+$timeline-secondary-color: #5b7bb4;
+$timeline-max-width: 1100px;
+
+// Projects:
+$projectHeight: 82.75vh; // 16:9 big screen
+$projectHeightSmall: 75.95vh;
+
+// 01-form-validator
+$success-color: #2ecc71;
+$error-color: #e74c3c;
+
+// 02-movie-seat-booking
+$dark-background: #242333;
+$dark-selected: #6feaf6;
+$seat-unselected: #777;
+$seat-background: #444451;
+$dark-grey-background: rgba(0, 0, 0, 0.1);
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
