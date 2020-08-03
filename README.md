@@ -1,3 +1,75 @@
+# Portfolio-Deployment Version
+
+## Log in Command
+
+```bash
+# Login to user 'Hao' for 'Portfolio_Hao' EC2 instance
+ssh -i ~/.ssh/portfolio_user_hao.pem hao@ec2-13-59-87-12.us-east-2.compute.amazonaws.com
+```
+
+
+
+
+
+
+
+
+
+## AWS Configuration
+
+1. Connect to the AWS Linux Server via SSH
+
+2. Create a user
+
+```bash
+# create a user 'hao'
+sudo add user hao
+#  login as a user 'hao'
+sudo su - hao
+```
+
+3.  Add **.ssh** folder to the user
+
+
+   ```bash
+# initialize .ssh folder for SSH login service
+mkdir .ssh
+# change file permission: only the file owner can read/write or open the directory
+chmod 700 .ssh
+# Create 'authorized_keys' file for SSH public keys
+touch authorized_keys
+# change file permission: only the file owner can read/write the file
+chmod 600 authorized_keys
+   ```
+
+4. Prepare the private-public key pair
+
+```bash
+# Change file permission: only the file owner can read the file
+chmod 400 portfolio_user_hao.pem
+# Generate a public key according to the private key
+ssh-keygen -y
+# Enter the file path
+Enter file in which the key is (/Users/lianghao/.ssh/id_rsa): # /Users/lianghao/.ssh/portfolio_user_hao.pem
+```
+
+5. Configure the public key for the user and login as the user
+
+```bash
+# Add the public key generated to the 'authorized_keys' file
+vim authorized_keys
+# Done configuration 
+# ------
+# Login as the user
+ssh -i ~/.ssh/
+```
+
+
+
+
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
