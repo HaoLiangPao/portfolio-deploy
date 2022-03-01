@@ -7,8 +7,7 @@
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
 		"axios": "^0.19.2",
-		"glob-to-regexp": "^0.4.1",
-		"node-sass": "^7.0.1",
+		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-redux": "^7.2.0",
@@ -17,7 +16,6 @@
 		"redux": "^4.0.5",
 		"redux-devtools-extension": "^2.13.8",
 		"redux-thunk": "^2.3.0",
-		"serve": "^13.0.2",
 		"typescript": "^3.9.5"
 	},
 	"engines": {
@@ -25,26 +23,17 @@
 		"node": "16.13.1"
 	},
 	"scripts": {
-		"dev": "react-scripts start",
-		"start": "serve -s build",
+		"start": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
+		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"heroku-postbuild": "npm run build"
+		"sass": "node-sass -w src/scss/ -o src/css"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [">0.2%", "not dead", "not op_mini all"],
+		"development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
 	}
 }
